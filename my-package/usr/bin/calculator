@@ -1,0 +1,45 @@
+#!/usr/bin/env python3
+
+def add (x,y):
+    return x + y
+
+def sub (x,y):
+    return x - y
+
+def mult (x,y):
+    return x * y
+
+def div (x,y):
+    while True:
+        try :
+            return  x/y
+        except ZeroDivisionError:
+            print ("cannot divide by 0")
+            y = float(input("Enter the second number again: "))
+
+if __name__ == "__main__":
+    print ("Simple Calculator V1.0")
+    print ("Operations : +, -, *, /")
+
+    while True:
+        operation = input("Chose one operation: ")
+        if operation not in ["+", "-", "*", "/"] :
+            print ("operation invalid")
+        else :
+            break
+    while True:
+        try:
+            num1 = int(input("Enter the first number: "))
+            num2 = int(input("Enter the second number :"))
+            break
+        except:
+            print ("Please select two numbers")
+
+    if operation == "+" :
+        print ("Result:", add(num1,num2))
+    elif operation == "-" :
+        print ("Result:", sub(num1,num2))
+    elif operation == "*" :
+        print ("Result:", mult(num1,num2))
+    else:
+        print ("Result:", div(num1,num2))
